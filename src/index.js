@@ -1,5 +1,4 @@
 import cipher from './cipher.js'
-//console.log(cipher);
 
 function mostrarMensaje() {
     let mensajeEscrito = document.getElementById("mensajeEscrito").value;

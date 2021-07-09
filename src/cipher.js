@@ -7,6 +7,9 @@ const cipher = {
         y lo hara mientras i sea menor que mensajeMayus.length, al finalizar la iteracion a i le suma 1 al indice para cambiar el varlor*/
         for (let i = 0; i < mensajeMayus.length; i++) {
             let letraASCII = mensajeMayus.charCodeAt(i); //variable que guarda el numero ASCII de cada letra que se esta iterando
+            if (letraASCII == 32) {
+                String.fromCharCode(cifrar)
+            }
             let cifrar = ((letraASCII - 65 + offset) % 26) + 65; //Formula del cifrado cesar 
             let Cifrado = String.fromCharCode(cifrar);
 
