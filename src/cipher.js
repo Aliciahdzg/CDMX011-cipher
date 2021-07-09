@@ -33,9 +33,13 @@ const cipher = {
 
     decode: (offset, string) => {
         let mensajeDescifrado = "";
+        if (offset === null && typeof string !== String) {
+            throw new TypeError("valores inválidos")
+        } else if (offset == 0 && string == 0) {
+            throw new TypeError("valores inválidos")
+        }
         for (let i = 0; i < string.length; i++) {
             let letraASCII = string.charCodeAt(i);
-            console.log(letraASCII)
             let descifrar = ((letraASCII + 65 - offset) % 26) + 65;
             let descifrado = String.fromCharCode(descifrar);
 
