@@ -18,20 +18,20 @@ const cipher = {
                 cipherLetter = ((valueASCII - 65 + offset) % 26) + 65;
             } else if ((valueASCII >= 97) && (valueASCII < 123)) {
                 cipherLetter = ((valueASCII - 97 + offset) % 26) + 97;
-            } else {
-                cipherResult += string[i];
-                continue
-            }
-            /*else if (valueASCII == 32) {
+            } else if (valueASCII == 32) {
                 //resultadoCifrado += string[i];
                 //continue
-                cifrar = (valueASCII - 32) + 32;
+                cipherLetter = (valueASCII - 32) + 32;
             } else if (valueASCII == 33) {
-                cifrar = (valueASCII - 33) + 33;
+                cipherLetter = (valueASCII - 33) + 33;
             } else if (valueASCII == 64) {
-                cifrar = (valueASCII - 64) + 64;
-            }*/
+                cipherLetter = (valueASCII - 64) + 64;
+            }
             //console.log(letraASCII, cifrar)
+            /*else {
+                cipherResult += string[i];
+                continue
+            }*/
             let cipherMessage = String.fromCharCode(cipherLetter);
 
 
@@ -42,31 +42,41 @@ const cipher = {
     },
 
     decode: (offset, string) => {
-        let mensajeDescifrado = "";
-        let descifrar = ""
+        let decipherMessage = "";
+        let descipher = ""
         if (offset === null && typeof string !== String) {
             throw new TypeError("valores inválidos");
         } else if (offset == 0 && string == 0) {
             throw new TypeError("valores inválidos");
         }
         for (let i = 0; i < string.length; i++) {
-            let letraASCII = string.charCodeAt(i);
+            let valueASCII = string.charCodeAt(i);
             //console.log(letraASCII)
 
-            if ((letraASCII >= 65) && (letraASCII < 91)) {
-                descifrar = ((letraASCII + 65 - offset) % 26) + 65;
-            } else if ((letraASCII >= 97) && (letraASCII < 123)) {
-                descifrar = ((letraASCII - 122 - parseInt(offset)) % 26) + 122;
-            } else {
-                mensajeDescifrado += string[i]
+            if ((valueASCII >= 65) && (valueASCII < 91)) {
+                descipher = ((valueASCII + 65 - offset) % 26) + 65;
+            } else if ((valueASCII >= 97) && (valueASCII < 123)) {
+                descipher = ((valueASCII - 122 - parseInt(offset)) % 26) + 122;
+            } else if (valueASCII == 32) {
+                //resultadoCifrado += string[i];
+                //continue
+                descipher = (valueASCII - 32) + 32;
+            } else if (valueASCII == 33) {
+                descipher = (valueASCII - 33) + 33;
+            } else if (valueASCII == 64) {
+                descipher = (valueASCII - 64) + 64;
             }
+            /*else {
+                decipherMessage += string[i]
+                continue
+            }*/
             //console.log(letraASCII, descifrar)
-            let descifrado = String.fromCharCode(descifrar);
+            let descifrado = String.fromCharCode(descipher);
 
-            mensajeDescifrado += descifrado;
+            decipherMessage += descifrado;
         }
 
-        return mensajeDescifrado;
+        return decipherMessage;
     }
 
 
