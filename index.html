@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Caesar Cipher</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <div id="root">
+        <h1>¡Me cuidan mis amigas!</h1> <img src="AmigasEspalda.jpg">
+    </div>
+
+    <section id="explicacion">
+        <p>Cuando estamos en situacion de violencia necesitamos una red de apoyo para salir de la situacion. <br> Puedes cifrar varios mensajes y guardarlos para usarlos después.<br> Crea un plan con tu amiga o familiar que te brindara el apoyo. </p>
+        <p>Para cifrar tu mensaje:
+            <ol>
+                <li value="1">Escribe el texto en el espacio indicado</li>
+                <li>Elige un numero</li>
+            </ol>
+        </p>
+    </section>
+
+    <!-- <div>
+     <aside>
+      <h2>Articulos de interés</h2>
+      <ul>
+        <li><a href="https://www.gob.mx/inmujeres/acciones-y-programas/vida-sin-violencia" target="_blank" title="Programa 'Vida sin violencia' del gobierno de México">Vida sin violencia</a>></li>
+      </ul>
+     </aside>
+    </div>-->
+
+    <section id="cifrado">
+        <form>
+            <textarea name="mensaje" id="mensajeEscrito" rows="10" cols="40" placeholder="Escribe aqui tu mensaje" required></textarea>
+            <input type="number" id="desplazamiento" min="1" max="50" placeholder="Numero" required/>
+            <textarea name="cifradoMensaje" id="mensajeCifrado" rows="10" cols="40"></textarea>
+        </form>
+        <div>
+            <button type="button" id="cifrarBTN" class="botones">Cifrar</button>
+            <button type="button" id="descifrarBTN" class="botones">Descifrar</button>
+            <button type="reset" id="borrarBTN" class="botones">Borrar</button>
+        </div>
+    </section>
+    <script src="./index.js" type="module"></script>
+</body>
+
+</html>

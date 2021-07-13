@@ -1,0 +1,32 @@
+#root {
+    color: rgb(42, 61, 61);
+    font-family: monospace;
+    text-align: center;
+}
+
+body {
+    background-color: rgb(196, 150, 238);
+}
+
+#xtras {
+    background-color: rgb(146, 56, 231);
+    text-align: left;
+}
+
+#explicacion {
+    text-align: center;
+}
+
+#cifrado {
+    text-align: center;
+}
+
+.botones {
+    background-color: cyan;
+    height: 50px;
+    margin-top: 20px;
+}
+
+p {
+    color: #fff;
+}
